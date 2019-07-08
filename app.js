@@ -4,6 +4,7 @@ const hbs = require('express-handlebars');
 
 // routers
 const index_router = require('./routers/index_router');
+const recipe_router = require('./routers/recipe_router');
 
 // init application
 const app = express();
@@ -23,6 +24,7 @@ app.use(request_logger);
 
 // use the routers
 app.use('/', index_router);
+app.use('/recipe', recipe_router);
 
 // start listening for calls
 app.listen(8080);
